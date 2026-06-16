@@ -1,0 +1,9 @@
+.Port_MainPage{
+    background:url('E: \\New_Portfolio\\my-portfolio\\public\\Images\\Port_HomeBanner.png');
+    background-repeat:no-repeat;
+    background-size: contain;
+    height:100vh;
+    width:100%;
+        color: white;
+            background-color: black;
+}

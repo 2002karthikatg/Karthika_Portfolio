@@ -1,0 +1,135 @@
+* {
+    font-family: Poppins;
+}
+
+.Port_HomePageMain {
+    background: url('../../../../public/Images/Port_HomeBanner.png');
+    height: 100vh;
+    width: 100%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.Port_HomePageContent {
+    width: 44%;
+    color: rgba(230, 230, 230, 1);
+    margin-bottom: 15px;
+}
+
+.Port_HomePageContent_Heading {
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 60px;
+    leading-trim: NONE;
+    line-height: 113.99999999999999%;
+    letter-spacing: 0%;
+}
+
+.Port_HomePageContent_SubHeading {
+    background: linear-gradient(93.66deg, #194BFD -15.33%, #AD13FB 139.21%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 700;
+    font-style: Bold;
+
+}
+
+.Port_HomePageContent_Desc {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    margin-top: 20px;
+}
+
+.Port_HomeResumeBtn {
+    background: linear-gradient(93.66deg, #194BFD -15.33%, #AD13FB 139.21%);
+    border-radius: 50px;
+    padding: 10px 20px;
+
+}
+
+.HB_resume_DownloadIcon {
+    width: 20px;
+    height: 20px;
+
+}
+
+.Port_HomeSocialIconMain {
+    background: rgba(0, 0, 0, 1);
+    box-shadow: 0px 0px 8.7px 0px rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+}
+
+.Port_HomeSocialIconImg {
+    object-fit: contain;
+    width: 30px;
+    height: 30px;
+    margin: auto;
+}
+
+.Port_HomeSocialIconMain:hover {
+    box-shadow: 0px 0px 15.7px 0px rgba(255, 255, 255, 0.25);
+} 
+
+
+/* Home sections  */
+.Port_HomeSectionsMain{
+    background: rgba(10, 10, 12, 1);
+    padding: 5% auto;
+}
+.Port_HomePageHeading {
+    font-weight: 700;
+    font-size: 32px;
+    color: rgba(255, 255, 255, 1);
+    width: 15%;
+    padding-bottom: 5px;
+    text-align: center;
+    margin: auto;
+    position: relative;
+}
+
+.Port_HomePageHeading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2.5px;
+    background: linear-gradient(93.66deg, #194BFD -15.58%, #AD13FB 138.95%);
+    -webkit-mask: linear-gradient(to right, transparent 0%, black 30%, black 70%, transparent 100%);
+    mask: linear-gradient(to right, transparent 0%, black 30%, black 70%, transparent 100%);
+    border-radius: 2px;
+}
+/* ABOUT SECTION  */
+
+.Port_AboutContent1{
+    font-family: Lato;
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 96px;
+        leading-trim: NONE;
+        line-height: 113.99999999999999%;
+        letter-spacing: 0%;
+        color: rgba(255, 255, 255, 1);
+}
+.Port_AboutContent2{
+    color: rgba(195, 195, 195, 1);
+    font-family: Lato;
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 26px;
+        leading-trim: NONE;
+        line-height: 113.99999999999999%;
+        letter-spacing: 0%;
+}

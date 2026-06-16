@@ -1,0 +1,23 @@
+.Port_NavMain{
+    display:flex;
+    justify-content: space-between;
+    padding:10px 5%;
+    align-items: center; align-content: center;
+}
+.Port_NavContentMain{
+    display:flex;
+    gap:20px;
+    align-items: center;
+        align-content: center;
+}
+.Port_Nav_contentImg{
+    width:30px;
+    height:30px;
+}
+.Port_NavItems{
+    display:flex;
+    gap: 10%;
+}
+.Port_NavHidded{
+    visibility:hidden;
+}
