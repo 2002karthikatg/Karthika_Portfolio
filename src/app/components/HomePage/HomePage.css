@@ -1,6 +1,15 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
 * {
     font-family: Poppins;
 }
+
+
+/* =========================================
+   HERO
+========================================= */
 
 .Port_HomePageMain {
     background: url('../../../../public/Images/Port_HomeBanner.png');
@@ -9,7 +18,6 @@
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-
 }
 
 .Port_HomePageContent {
@@ -22,7 +30,6 @@
     font-family: Poppins;
     font-weight: 400;
     font-size: 60px;
-    leading-trim: NONE;
     line-height: 113.99999999999999%;
     letter-spacing: 0%;
 }
@@ -33,8 +40,6 @@
     background-clip: text;
     color: transparent;
     font-weight: 700;
-    font-style: Bold;
-
 }
 
 .Port_HomePageContent_Desc {
@@ -48,13 +53,11 @@
     background: linear-gradient(93.66deg, #194BFD -15.33%, #AD13FB 139.21%);
     border-radius: 50px;
     padding: 10px 20px;
-
 }
 
 .HB_resume_DownloadIcon {
     width: 20px;
     height: 20px;
-
 }
 
 .Port_HomeSocialIconMain {
@@ -80,14 +83,22 @@
 
 .Port_HomeSocialIconMain:hover {
     box-shadow: 0px 0px 15.7px 0px rgba(255, 255, 255, 0.25);
-} 
+}
 
 
-/* Home sections  */
-.Port_HomeSectionsMain{
+/* =========================================
+   ALL SECTIONS WRAPPER
+========================================= */
+
+.Port_HomeAllSectionsWrapper {
+    background: rgba(10, 10, 12, 1);
+}
+
+.Port_HomeSectionsMain {
     background: rgba(10, 10, 12, 1);
     padding: 5% auto;
 }
+
 .Port_HomePageHeading {
     font-weight: 700;
     font-size: 32px;
@@ -111,25 +122,792 @@
     mask: linear-gradient(to right, transparent 0%, black 30%, black 70%, transparent 100%);
     border-radius: 2px;
 }
-/* ABOUT SECTION  */
 
-.Port_AboutContent1{
-    font-family: Lato;
-        font-weight: 700;
-        font-style: Bold;
-        font-size: 96px;
-        leading-trim: NONE;
-        line-height: 113.99999999999999%;
-        letter-spacing: 0%;
-        color: rgba(255, 255, 255, 1);
+
+/* =========================================
+   ABOUT SECTION
+========================================= */
+
+.Port_AboutWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-top: 3%;
 }
-.Port_AboutContent2{
+
+.Port_AboutContent1 {
+    font-family: Lato;
+    font-weight: 700;
+    font-size: 96px;
+    line-height: 113.99999999999999%;
+    letter-spacing: 0%;
+    color: rgba(255, 255, 255, 1);
+}
+
+.Port_AboutContent2 {
     color: rgba(195, 195, 195, 1);
     font-family: Lato;
-        font-weight: 700;
-        font-style: Bold;
-        font-size: 26px;
-        leading-trim: NONE;
-        line-height: 113.99999999999999%;
-        letter-spacing: 0%;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 113.99999999999999%;
+    letter-spacing: 0%;
+}
+
+.Port_AboutContent3 {
+    width: 3px;
+    height: 78px;
+    flex-shrink: 0;
+    background: linear-gradient(to bottom, #194BFD 0%, #AD13FB 100%);
+    -webkit-mask: linear-gradient(to bottom, transparent 0%, black 30%, black 70%, transparent 100%);
+    mask: linear-gradient(to bottom, transparent 0%, black 30%, black 70%, transparent 100%);
+}
+
+.Port_AboutContent4 {
+    font-family: Lato;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 34px;
+    letter-spacing: 0%;
+}
+
+.Port_AboutContent4Bold {
+    font-weight: 700;
+}
+
+
+/* =========================================
+   EXPERIENCE SECTION
+========================================= */
+
+.Port_ExpSecMain {
+    width: 80%;
+    max-width: 1800px;
+    padding: 28px 50px;
+    border-radius: 15px;
+    background: linear-gradient(232.96deg,
+            rgba(23, 23, 26, 0.45) 27.06%,
+            rgba(23, 23, 26, 0) 92.12%);
+    border: 2px solid rgba(38, 38, 42, 1);
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.Port_ExpSecWrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 100px;
+    align-items: start;
+}
+
+.Port_ExpSecContent1 {
+    min-width: 0;
+    margin: auto;
+}
+
+.Port_ExpSecHeading {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 2%;
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+    margin-bottom: 12px;
+}
+
+
+/* =========================================
+   TIMELINE
+========================================= */
+
+.Port_Timeline {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 13%;
+}
+
+.Port_TimelineItem {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 70px minmax(0, 1fr);
+    column-gap: 20px;
+    align-items: start;
+    min-height: 82px;
+}
+
+.Port_TimelineIconWrapper {
+    width: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Port_ContentLeftIcon {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    background: rgba(173, 19, 251, 1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+.Port_ContentLeftIcon img {
+    width: 30px;
+    height: 30px;
+    display: block;
+    margin: 0;
+}
+
+.Port_ContentLeftIconLine {
+    width: 4px;
+    height: 82px;
+    background: rgba(173, 19, 251, 1);
+    flex-shrink: 0;
+}
+
+.Port_LastLine {
+    visibility: hidden;
+}
+
+.Port_TimelineContent {
+    min-width: 0;
+    padding-top: 2px;
+    text-align: left;
+}
+
+.Port_ContentHeading {
+    font-family: Lato, sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: rgba(255, 255, 255, 1);
+    margin-bottom: 10px;
+}
+
+.Port_CotentPara {
+    font-family: Lato, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: rgba(122, 122, 123, 1);
+    margin-bottom: 10px;
+}
+
+
+/* =========================================
+   PROFESSIONAL SKILLSET — SECTION
+========================================= */
+
+.Port_SkillSection {
+    width: 100%;
+    margin-top: 30px;
+    padding-bottom: 28px;
+    overflow: hidden;
+    position: relative;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.Port_SkillHeading {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 100%;
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+}
+
+
+/* =========================================
+   GRADIENT LINE UNDER HEADING
+========================================= */
+
+.Port_SkillHeadingLine {
+    width: 260px;
+    height: 2px;
+    margin: 8px auto 30px;
+
+    background: linear-gradient(93.66deg,
+            #194BFD -15.58%,
+            #AD13FB 138.95%);
+
+    -webkit-mask: linear-gradient(to right,
+            transparent 0%,
+            black 30%,
+            black 70%,
+            transparent 100%);
+
+    mask: linear-gradient(to right,
+            transparent 0%,
+            black 30%,
+            black 70%,
+            transparent 100%);
+}
+
+
+/* =========================================
+   CAROUSEL WRAPPER
+   — overflow:hidden clips pills that go off screen
+   — ::before / ::after fade the edges so pills
+     dissolve smoothly rather than hard-clipping
+========================================= */
+
+.Port_SkillCarousel {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+}
+
+.Port_SkillCarousel::before,
+.Port_SkillCarousel::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 140px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.Port_SkillCarousel::before {
+    left: 0;
+    background: linear-gradient(to right, #0a0a0c 0%, transparent 100%);
+}
+
+.Port_SkillCarousel::after {
+    right: 0;
+    background: linear-gradient(to left, #0a0a0c 0%, transparent 100%);
+}
+
+
+/* =========================================
+   VIEWPORT — the "stage"
+========================================= */
+
+.Port_SkillViewport {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+
+/* =========================================
+   PILL WRAPPER — each slot
+   transform is applied via inline style so
+   all 5 slots use the same class
+========================================= */
+
+.Port_SkillPosition {
+    position: absolute;
+    top: 20px;
+
+    /*
+     * Anchor every pill at the horizontal
+     * centre of the viewport. The inline
+     * style then does:
+     *   translateX(calc(-50% + <slot offset>px))
+     * so the pill's own centre aligns with the
+     * slot, not its left edge.
+     */
+    left: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition:
+        transform 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.60s ease;
+
+    will-change: transform, opacity;
+}
+
+
+/* =========================================
+   NORMAL PILL
+========================================= */
+
+.Port_SkillItem {
+    min-width: 130px;
+    height: 50px;
+    padding: 5px 20px;
+    border-radius: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    white-space: nowrap;
+
+    font-family: Lato, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 1);
+
+    background: rgba(35, 35, 38, 1);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.Port_SkillItem:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(173, 19, 251, 0.20);
+}
+
+
+/* =========================================
+   ACTIVE CENTER PILL
+   Gradient border trick:
+   - padding-box fills the background
+   - border-box applies the gradient border
+========================================= */
+
+.Port_SkillActive {
+    min-width: 180px;
+    height: 58px;
+    padding: 0 25px;
+    border-radius: 30px;
+    gap: 8px;
+
+    font-size: 22px;
+    font-weight: 500;
+    color: #ffffff;
+
+    background:
+        linear-gradient(rgba(35, 35, 38, 1),
+            rgba(35, 35, 38, 1)) padding-box,
+        linear-gradient(90deg,
+            #194BFD 0%,
+            #AD13FB 100%) border-box;
+
+    border: 1.5px solid transparent;
+
+    box-shadow:
+        0 0 22px rgba(173, 19, 251, 0.18),
+        0 0 8px rgba(25, 75, 253, 0.12);
+
+    position: relative;
+    overflow: visible;
+    cursor: default;
+}
+
+/* Soft diffuse glow behind active pill */
+.Port_SkillActive::after {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    border-radius: 34px;
+    background: linear-gradient(90deg, #194BFD, #AD13FB);
+    opacity: 0.14;
+    filter: blur(10px);
+    z-index: -1;
+    animation: Port_SkillGlowPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes Port_SkillGlowPulse {
+
+    0%,
+    100% {
+        opacity: 0.10;
+        filter: blur(10px);
+    }
+
+    50% {
+        opacity: 0.22;
+        filter: blur(14px);
+    }
+}
+
+/* Icon gently floats inside active pill */
+.Port_SkillActive img {
+    width: 28px;
+    height: 28px;
+    animation: Port_SkillIconFloat 2s ease-in-out infinite;
+}
+
+@keyframes Port_SkillIconFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-2px);
+    }
+}
+
+
+/* =========================================
+   DOT INDICATORS
+========================================= */
+
+.Port_SkillDots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.Port_SkillDot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.20);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition:
+        width 0.4s ease,
+        background 0.4s ease;
+}
+
+.Port_SkillDotActive {
+    width: 20px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, #194BFD, #AD13FB);
+}
+
+
+
+
+
+
+/* =========================================
+   PROJECTS SECTION
+========================================= */
+
+.Port_ProjectSection {
+    width: 100%;
+
+    padding: 30px 20px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.Port_ProjectHeading {
+    font-family: Lora, serif;
+
+    font-size: 24px;
+
+    font-weight: 500;
+
+    line-height: 100%;
+
+    text-align: center;
+
+    color: #ffffff;
+}
+
+
+.Port_ProjectHeadingLine {
+    width: 80px;
+
+    height: 2px;
+
+    margin: 7px auto 25px;
+
+    background: linear-gradient(93.66deg,
+            #194BFD -15.58%,
+            #AD13FB 138.95%);
+
+    -webkit-mask: linear-gradient(to right,
+            transparent 0%,
+            black 30%,
+            black 70%,
+            transparent 100%);
+
+    mask: linear-gradient(to right,
+            transparent 0%,
+            black 30%,
+            black 70%,
+            transparent 100%);
+}
+
+
+/* =========================================
+   PROJECT GRID
+========================================= */
+
+.Port_ProjectGrid {
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+/* =========================================
+   PROJECT CARD
+========================================= */
+
+.Port_ProjectCard {
+    width: 100%;
+
+    min-width: 0;
+
+    background: #050505;
+
+    border: 1px solid rgba(38, 38, 42, 1);
+
+    border-radius: 7px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   CARD HOVER
+========================================= */
+
+.Port_ProjectCard:hover {
+    transform: translateY(-6px);
+
+    border-color: rgba(173, 19, 251, 0.55);
+
+    box-shadow:
+        0 8px 25px rgba(173, 19, 251, 0.18);
+}
+
+
+/* =========================================
+   IMAGE WRAPPER
+========================================= */
+
+.Port_ProjectImageWrapper {
+    width: 100%;
+
+    height: 150px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: #111111;
+}
+
+
+/* =========================================
+   PROJECT IMAGE
+========================================= */
+
+.Port_ProjectImage {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform 0.5s ease;
+}
+
+
+/* IMAGE ZOOM */
+
+.Port_ProjectCard:hover .Port_ProjectImage {
+    transform: scale(1.06);
+}
+
+
+/* =========================================
+   HOVER OVERLAY
+========================================= */
+
+.Port_ProjectOverlay {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease;
+}
+
+
+/* SHOW OVERLAY */
+
+.Port_ProjectCard:hover .Port_ProjectOverlay {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* =========================================
+   ICON BUTTON
+========================================= */
+
+.Port_ProjectIcon {
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #ffffff;
+
+    background: rgba(35, 35, 38, 0.95);
+
+    border: 1px solid rgba(173,
+            19,
+            251,
+            0.6);
+
+    text-decoration: none;
+
+    font-size: 17px;
+
+    transform: translateY(10px);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* ICON ANIMATION */
+
+.Port_ProjectCard:hover .Port_ProjectIcon {
+    transform: translateY(0);
+}
+
+
+/* INDIVIDUAL DELAY */
+
+.Port_ProjectCard:hover .Port_ProjectIcon:nth-child(2) {
+    transition-delay: 0.05s;
+}
+
+
+/* ICON HOVER */
+
+.Port_ProjectIcon:hover {
+    color: #ffffff;
+
+    background: linear-gradient(135deg,
+            #194BFD,
+            #AD13FB);
+
+    border-color: transparent;
+
+    box-shadow:
+        0 0 15px rgba(173,
+            19,
+            251,
+            0.45);
+
+    text-decoration: none;
+}
+
+
+/* =========================================
+   PROJECT CONTENT
+========================================= */
+
+.Port_ProjectContent {
+    padding: 10px 12px 13px;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   PROJECT NAME
+========================================= */
+
+.Port_ProjectName {
+    font-family: Lato, sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    line-height: 18px;
+
+    color: #ffffff;
+
+    margin-bottom: 4px;
+}
+
+
+/* =========================================
+   PROJECT DESCRIPTION
+========================================= */
+
+.Port_ProjectDesc {
+    font-family: Lato, sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 400;
+
+    line-height: 15px;
+
+    color: rgba(170,
+            170,
+            170,
+            1);
 }

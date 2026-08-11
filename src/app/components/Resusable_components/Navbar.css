@@ -1,23 +1,75 @@
-.Port_NavMain{
-    display:flex;
+.Port_NavMain {
+    display: flex;
     justify-content: space-between;
-    padding:10px 5%;
-    align-items: center; align-content: center;
-}
-.Port_NavContentMain{
-    display:flex;
-    gap:20px;
+    padding: 10px 5%;
     align-items: center;
-        align-content: center;
+    align-content: center;
 }
-.Port_Nav_contentImg{
-    width:30px;
-    height:30px;
+
+.Port_NavContentMain {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    align-content: center;
 }
-.Port_NavItems{
-    display:flex;
+
+.Port_Nav_contentImg {
+    width: 30px;
+    height: 30px;
+}
+
+.Port_NavItems {
+    display: flex;
     gap: 10%;
 }
-.Port_NavHidded{
-    visibility:hidden;
+
+.Port_NavHidded {
+    visibility: hidden;
+}
+
+
+
+/* FOOTER CSS  */
+.Port_FooterMain {
+    background: rgba(10, 10, 12, 1);
+}
+.Port_FooterLayout{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2%;
+    padding-bottom: 1%;
+}
+
+.Port_FooterLeftContent {
+    font-weight: 500;
+    font-style: Bold;
+    font-size: 24px;
+    leading-trim: NONE;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: rgba(255, 255, 255, 1);
+}
+
+.Port_FooterContentPara {
+    font-weight: 400;
+    font-size: 18px;
+    text-decoration: none !important;
+    color: rgba(255, 255, 255, 1);
+}
+
+.Port_FooterContentPara:hover {
+    color: rgba(255, 255, 255, 1);
+    text-decoration: none;
+}
+
+.Port_FooterCopyContent {
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 12px;
+    leading-trim: NONE;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: rgba(122, 122, 123, 1);
+    margin-top: 5%;
+    text-align: center;
 }
