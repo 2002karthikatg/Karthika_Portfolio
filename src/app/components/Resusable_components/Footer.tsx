@@ -28,22 +28,22 @@ function Footer() {
           <div className="Port_HomeSocialIcons flex items-center gap-5">
             {[
               {
-                src: "./images/HB_LinkedIcon.png",
+                src: "/Images/HB_LinkedIcon.png",
                 alt: "LinkedIn",
                 href: "https://www.linkedin.com/in/karthiyayini-t-g-08a672207/",
               },
               {
-                src: "./images/HB_WpIcon.png",
+                src: "/Images/HB_WpIcon.png",
                 alt: "WhatsApp",
                 href: "https://wa.me/917092558277",
               },
               {
-                src: "./images/HB_MailIcon.png",
+                src: "/Images/HB_MailIcon.png",
                 alt: "Mail",
                 href: "mailto:karthiyayinitg1312@gmail.com",
               },
               {
-                src: "./images/HB_GitHubIcon.png",
+                src: "/Images/HB_GitHubIcon.png",
                 alt: "GitHub",
                 href: "https://github.com/2002karthikatg",
               },
