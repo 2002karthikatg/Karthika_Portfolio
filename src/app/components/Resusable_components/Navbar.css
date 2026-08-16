@@ -1,75 +1,689 @@
-.Port_NavMain {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 5%;
-    align-items: center;
-    align-content: center;
+/* =========================================================
+   GLOBAL NAV / FOOTER VARIABLES
+========================================================= */
+
+html {
+  scroll-behavior: smooth;
 }
 
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.Port_NavMain {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 100;
+
+  width: 100%;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding:
+    clamp(15px, 1.3vw, 26px)
+    clamp(24px, 5vw, 110px);
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(5, 5, 7, 0.38),
+      transparent
+    );
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
 .Port_NavContentMain {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    align-content: center;
+  display: flex;
+
+  align-items: center;
+
+  gap:
+    clamp(
+      10px,
+      1vw,
+      20px
+    );
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-family:
+    Poppins,
+    sans-serif;
+
+  font-weight: 500;
+
+  font-size:
+    clamp(
+      17px,
+      1.15vw,
+      24px
+    );
+
+  min-width: 170px;
+}
+
+.Port_NavContentMain:hover {
+  color: #ffffff;
+
+  text-decoration: none;
 }
 
 .Port_Nav_contentImg {
-    width: 30px;
-    height: 30px;
+  width:
+    clamp(
+      30px,
+      2vw,
+      42px
+    );
+
+  height:
+    clamp(
+      30px,
+      2vw,
+      42px
+    );
+
+  object-fit: contain;
 }
+
+
+/* =========================================================
+   DESKTOP ITEMS
+========================================================= */
 
 .Port_NavItems {
-    display: flex;
-    gap: 10%;
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap:
+    clamp(
+      20px,
+      2.4vw,
+      48px
+    );
 }
+
+.Port_NavItem {
+  position: relative;
+
+  color:
+    rgba(
+      230,
+      230,
+      230,
+      0.84
+    );
+
+  text-decoration: none;
+
+  font-family:
+    Poppins,
+    sans-serif;
+
+  font-size:
+    clamp(
+      13px,
+      0.9vw,
+      18px
+    );
+
+  font-weight: 400;
+
+  padding: 7px 0;
+
+  transition:
+    color 0.3s ease;
+}
+
+.Port_NavItem::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  width: 0;
+
+  height: 2px;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #194bfd,
+      #ad13fb
+    );
+
+  transform:
+    translateX(-50%);
+
+  transition:
+    width 0.3s ease;
+}
+
+.Port_NavItem:hover {
+  color: #ffffff;
+
+  text-decoration: none;
+}
+
+.Port_NavItem:hover::after {
+  width: 100%;
+}
+
+
+/* =========================================================
+   INVISIBLE RIGHT SPACER
+========================================================= */
 
 .Port_NavHidded {
-    visibility: hidden;
+  min-width: 170px;
+
+  visibility: hidden;
+
+  pointer-events: none;
 }
 
 
+/* =========================================================
+   MOBILE BUTTON
+========================================================= */
 
-/* FOOTER CSS  */
+.Port_NavMenuButton {
+  display: none;
+
+  width: 44px;
+  height: 44px;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background:
+    rgba(
+      20,
+      20,
+      24,
+      0.82
+    );
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.12
+    );
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  cursor: pointer;
+
+  padding: 0;
+}
+
+.Port_NavMenuButton span {
+  width: 18px;
+
+  height: 1.5px;
+
+  background: #ffffff;
+
+  border-radius: 10px;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.Port_NavMenuButton--active
+  span:nth-child(1) {
+  transform:
+    translateY(6.5px)
+    rotate(45deg);
+}
+
+.Port_NavMenuButton--active
+  span:nth-child(2) {
+  opacity: 0;
+}
+
+.Port_NavMenuButton--active
+  span:nth-child(3) {
+  transform:
+    translateY(-6.5px)
+    rotate(-45deg);
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.Port_NavMobileMenu {
+  position: absolute;
+
+  top:
+    calc(
+      100% + 8px
+    );
+
+  left: 20px;
+  right: 20px;
+
+  display: none;
+
+  flex-direction: column;
+
+  padding: 12px;
+
+  border-radius: 18px;
+
+  background:
+    rgba(
+      15,
+      15,
+      18,
+      0.96
+    );
+
+  backdrop-filter:
+    blur(20px);
+
+  -webkit-backdrop-filter:
+    blur(20px);
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.09
+    );
+
+  box-shadow:
+    0 20px 60px
+    rgba(
+      0,
+      0,
+      0,
+      0.35
+    );
+}
+
+.Port_NavMobileItem {
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  align-items: center;
+
+  padding:
+    13px 14px;
+
+  color:
+    rgba(
+      235,
+      235,
+      235,
+      0.88
+    );
+
+  text-decoration: none;
+
+  border-radius: 10px;
+
+  font-family:
+    Poppins,
+    sans-serif;
+
+  font-size: 14px;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.Port_NavMobileItem:hover {
+  color: #ffffff;
+
+  text-decoration: none;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.055
+    );
+}
+
+.Port_NavMobileArrow {
+  color: #ad13fb;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
 .Port_FooterMain {
-    background: rgba(10, 10, 12, 1);
+  width: 100%;
+
+  background:
+    rgba(
+      10,
+      10,
+      12,
+      1
+    );
+
+  border-top:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.06
+    );
+
+  overflow: hidden;
 }
-.Port_FooterLayout{
-    display: flex;
-    justify-content: space-between;
-    padding-top: 2%;
-    padding-bottom: 1%;
+
+.Port_FooterLayout {
+  width: 100%;
+
+  max-width:
+    min(
+      88vw,
+      1600px
+    ) !important;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content:
+    space-between;
+
+  gap: 40px;
+
+  padding-top:
+    clamp(
+      35px,
+      4vw,
+      75px
+    );
+
+  padding-bottom:
+    clamp(
+      28px,
+      3vw,
+      55px
+    );
 }
 
 .Port_FooterLeftContent {
-    font-weight: 500;
-    font-style: Bold;
-    font-size: 24px;
-    leading-trim: NONE;
-    line-height: 100%;
-    letter-spacing: 0%;
-    color: rgba(255, 255, 255, 1);
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 9px;
+
+  color: #ffffff;
+}
+
+.Port_FooterName {
+  margin-bottom: 6px;
+
+  font-family:
+    Poppins,
+    sans-serif;
+
+  font-weight: 500;
+
+  font-size:
+    clamp(
+      20px,
+      1.5vw,
+      30px
+    );
+
+  line-height: 1.3;
 }
 
 .Port_FooterContentPara {
-    font-weight: 400;
-    font-size: 18px;
-    text-decoration: none !important;
-    color: rgba(255, 255, 255, 1);
+  font-family:
+    Lato,
+    sans-serif;
+
+  font-weight: 400;
+
+  font-size:
+    clamp(
+      15px,
+      1.05vw,
+      20px
+    );
+
+  line-height: 1.6;
+
+  text-decoration: none;
+
+  color:
+    rgba(
+      225,
+      225,
+      225,
+      0.88
+    );
+
+  transition:
+    color 0.25s ease;
 }
 
 .Port_FooterContentPara:hover {
-    color: rgba(255, 255, 255, 1);
-    text-decoration: none;
+  color: #ffffff;
+
+  text-decoration: none;
+}
+
+.Port_FooterRightContent {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-end;
+
+  gap: 22px;
 }
 
 .Port_FooterCopyContent {
-    font-weight: 400;
-    font-style: Regular;
-    font-size: 12px;
-    leading-trim: NONE;
-    line-height: 100%;
-    letter-spacing: 0%;
-    color: rgba(122, 122, 123, 1);
-    margin-top: 5%;
-    text-align: center;
+  font-family:
+    Lato,
+    sans-serif;
+
+  font-weight: 400;
+
+  font-size:
+    clamp(
+      11px,
+      0.75vw,
+      14px
+    );
+
+  line-height: 1.4;
+
+  color:
+    rgba(
+      122,
+      122,
+      123,
+      1
+    );
+
+  text-align: right;
+}
+
+
+/* =========================================================
+   RESPONSIVE NAVIGATION
+========================================================= */
+
+@media
+  (max-width: 900px) {
+
+  .Port_NavMain {
+    padding:
+      15px
+      24px;
+  }
+
+  .Port_NavItems,
+  .Port_NavHidded {
+    display: none;
+  }
+
+  .Port_NavMenuButton {
+    display: flex;
+  }
+
+  .Port_NavMobileMenu {
+    display: flex;
+  }
+
+  .Port_NavContentMain {
+    min-width: 0;
+  }
+}
+
+
+/* =========================================================
+   FOOTER TABLET
+========================================================= */
+
+@media
+  (max-width: 768px) {
+
+  .Port_FooterLayout {
+    max-width:
+      calc(
+        100% - 40px
+      ) !important;
+
+    flex-direction: column;
+
+    gap: 32px;
+  }
+
+  .Port_FooterRightContent {
+    width: 100%;
+
+    align-items:
+      flex-start;
+  }
+
+  .Port_FooterCopyContent {
+    text-align: left;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media
+  (max-width: 480px) {
+
+  .Port_NavMain {
+    padding:
+      13px
+      18px;
+  }
+
+  .Port_NavContentMain {
+    gap: 9px;
+
+    font-size: 16px;
+  }
+
+  .Port_Nav_contentImg {
+    width: 29px;
+
+    height: 29px;
+  }
+
+  .Port_NavMenuButton {
+    width: 40px;
+
+    height: 40px;
+  }
+
+  .Port_NavMobileMenu {
+    left: 14px;
+
+    right: 14px;
+  }
+
+  .Port_FooterLayout {
+    max-width:
+      calc(
+        100% - 32px
+      ) !important;
+
+    padding-top: 35px;
+
+    padding-bottom: 35px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media
+  (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .Port_NavItem,
+  .Port_NavItem::after,
+  .Port_NavMenuButton span {
+    transition: none;
+  }
 }
