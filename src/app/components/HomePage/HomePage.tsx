@@ -575,6 +575,7 @@ import {
 } from "react-icons/fa";
 
 import {
+    AnimatePresence,
   motion,
   useReducedMotion,
 } from "framer-motion";
@@ -709,6 +710,250 @@ const SKILLS = [
   },
 ];
 
+/* =========================================================
+   RESPONSIVE PROFESSIONAL SKILL ARC
+========================================================= */
+
+const getSkillSlots = (width: number) => {
+  /* =======================================================
+     SMALL MOBILE
+  ======================================================== */
+
+  if (width <= 480) {
+    return [
+      {
+        tx: -140,
+        ty: 16,
+        scale: 0.68,
+        opacity: 0.4,
+        z: 1,
+      },
+
+      {
+        tx: -76,
+        ty: 48,
+        scale: 0.8,
+        opacity: 0.76,
+        z: 2,
+      },
+
+      {
+        tx: 0,
+        ty: 92,
+        scale: 0.94,
+        opacity: 1,
+        z: 5,
+      },
+
+      {
+        tx: 76,
+        ty: 48,
+        scale: 0.8,
+        opacity: 0.76,
+        z: 2,
+      },
+
+      {
+        tx: 140,
+        ty: 16,
+        scale: 0.68,
+        opacity: 0.4,
+        z: 1,
+      },
+    ];
+  }
+
+  /* =======================================================
+     LARGE MOBILE / SMALL TABLET
+  ======================================================== */
+
+  if (width <= 768) {
+    return [
+      {
+        tx: -220,
+        ty: 18,
+        scale: 0.72,
+        opacity: 0.48,
+        z: 1,
+      },
+
+      {
+        tx: -120,
+        ty: 52,
+        scale: 0.84,
+        opacity: 0.8,
+        z: 2,
+      },
+
+      {
+        tx: 0,
+        ty: 104,
+        scale: 0.97,
+        opacity: 1,
+        z: 5,
+      },
+
+      {
+        tx: 120,
+        ty: 52,
+        scale: 0.84,
+        opacity: 0.8,
+        z: 2,
+      },
+
+      {
+        tx: 220,
+        ty: 18,
+        scale: 0.72,
+        opacity: 0.48,
+        z: 1,
+      },
+    ];
+  }
+
+  /* =======================================================
+     TABLET / SMALL DESKTOP
+  ======================================================== */
+
+  if (width <= 1200) {
+    return [
+      {
+        tx: -320,
+        ty: 20,
+        scale: 0.78,
+        opacity: 0.56,
+        z: 1,
+      },
+
+      {
+        tx: -175,
+        ty: 58,
+        scale: 0.9,
+        opacity: 0.86,
+        z: 2,
+      },
+
+      {
+        tx: 0,
+        ty: 112,
+        scale: 1,
+        opacity: 1,
+        z: 5,
+      },
+
+      {
+        tx: 175,
+        ty: 58,
+        scale: 0.9,
+        opacity: 0.86,
+        z: 2,
+      },
+
+      {
+        tx: 320,
+        ty: 20,
+        scale: 0.78,
+        opacity: 0.56,
+        z: 1,
+      },
+    ];
+  }
+
+  /* =======================================================
+     NORMAL DESKTOP
+  ======================================================== */
+
+  if (width <= 1920) {
+    return [
+      {
+        tx: -420,
+        ty: 22,
+        scale: 0.82,
+        opacity: 0.62,
+        z: 1,
+      },
+
+      {
+        tx: -230,
+        ty: 62,
+        scale: 0.92,
+        opacity: 0.88,
+        z: 2,
+      },
+
+      {
+        tx: 0,
+        ty: 118,
+        scale: 1,
+        opacity: 1,
+        z: 5,
+      },
+
+      {
+        tx: 230,
+        ty: 62,
+        scale: 0.92,
+        opacity: 0.88,
+        z: 2,
+      },
+
+      {
+        tx: 420,
+        ty: 22,
+        scale: 0.82,
+        opacity: 0.62,
+        z: 1,
+      },
+    ];
+  }
+
+  /* =======================================================
+     LARGE DESKTOP
+  ======================================================== */
+
+  return [
+    {
+      tx: -540,
+      ty: 20,
+      scale: 0.88,
+      opacity: 0.66,
+      z: 1,
+    },
+
+    {
+      tx: -295,
+      ty: 68,
+      scale: 0.97,
+      opacity: 0.9,
+      z: 2,
+    },
+
+    {
+      tx: 0,
+      ty: 135,
+      scale: 1.08,
+      opacity: 1,
+      z: 5,
+    },
+
+    {
+      tx: 295,
+      ty: 68,
+      scale: 0.97,
+      opacity: 0.9,
+      z: 2,
+    },
+
+    {
+      tx: 540,
+      ty: 20,
+      scale: 0.88,
+      opacity: 0.66,
+      z: 1,
+    },
+  ];
+};
+
 
 /* =========================================================
    PROJECTS
@@ -774,241 +1019,6 @@ const KARTHIKA_PROJECTS = [
 ];
 
 
-/* =========================================================
-   RESPONSIVE SKILL ARC
-========================================================= */
-
-const getSkillSlots = (
-  width: number
-) => {
-  /* MOBILE */
-
-  if (width <= 480) {
-    return [
-      {
-        tx: -132,
-        ty: 20,
-        scale: 0.68,
-        opacity: 0.48,
-        z: 1,
-      },
-
-      {
-        tx: -73,
-        ty: 55,
-        scale: 0.8,
-        opacity: 0.78,
-        z: 2,
-      },
-
-      {
-        tx: 0,
-        ty: 92,
-        scale: 0.9,
-        opacity: 1,
-        z: 5,
-      },
-
-      {
-        tx: 73,
-        ty: 55,
-        scale: 0.8,
-        opacity: 0.78,
-        z: 2,
-      },
-
-      {
-        tx: 132,
-        ty: 20,
-        scale: 0.68,
-        opacity: 0.48,
-        z: 1,
-      },
-    ];
-  }
-
-  /* LARGE MOBILE / SMALL TABLET */
-
-  if (width <= 768) {
-    return [
-      {
-        tx: -220,
-        ty: 22,
-        scale: 0.72,
-        opacity: 0.5,
-        z: 1,
-      },
-
-      {
-        tx: -118,
-        ty: 55,
-        scale: 0.84,
-        opacity: 0.82,
-        z: 2,
-      },
-
-      {
-        tx: 0,
-        ty: 102,
-        scale: 0.95,
-        opacity: 1,
-        z: 5,
-      },
-
-      {
-        tx: 118,
-        ty: 55,
-        scale: 0.84,
-        opacity: 0.82,
-        z: 2,
-      },
-
-      {
-        tx: 220,
-        ty: 22,
-        scale: 0.72,
-        opacity: 0.5,
-        z: 1,
-      },
-    ];
-  }
-
-  /* TABLET / SMALL DESKTOP */
-
-  if (width <= 1200) {
-    return [
-      {
-        tx: -320,
-        ty: 25,
-        scale: 0.78,
-        opacity: 0.58,
-        z: 1,
-      },
-
-      {
-        tx: -175,
-        ty: 58,
-        scale: 0.9,
-        opacity: 0.86,
-        z: 2,
-      },
-
-      {
-        tx: 0,
-        ty: 108,
-        scale: 1,
-        opacity: 1,
-        z: 5,
-      },
-
-      {
-        tx: 175,
-        ty: 58,
-        scale: 0.9,
-        opacity: 0.86,
-        z: 2,
-      },
-
-      {
-        tx: 320,
-        ty: 25,
-        scale: 0.78,
-        opacity: 0.58,
-        z: 1,
-      },
-    ];
-  }
-
-  /* NORMAL DESKTOP */
-
-  if (width <= 1920) {
-    return [
-      {
-        tx: -420,
-        ty: 28,
-        scale: 0.82,
-        opacity: 0.65,
-        z: 1,
-      },
-
-      {
-        tx: -230,
-        ty: 60,
-        scale: 0.92,
-        opacity: 0.88,
-        z: 2,
-      },
-
-      {
-        tx: 0,
-        ty: 110,
-        scale: 1,
-        opacity: 1,
-        z: 5,
-      },
-
-      {
-        tx: 230,
-        ty: 60,
-        scale: 0.92,
-        opacity: 0.88,
-        z: 2,
-      },
-
-      {
-        tx: 420,
-        ty: 28,
-        scale: 0.82,
-        opacity: 0.65,
-        z: 1,
-      },
-    ];
-  }
-
-  /* LARGE DESKTOP */
-
-  return [
-    {
-      tx: -520,
-      ty: 30,
-      scale: 0.88,
-      opacity: 0.68,
-      z: 1,
-    },
-
-    {
-      tx: -280,
-      ty: 70,
-      scale: 0.96,
-      opacity: 0.9,
-      z: 2,
-    },
-
-    {
-      tx: 0,
-      ty: 130,
-      scale: 1.08,
-      opacity: 1,
-      z: 5,
-    },
-
-    {
-      tx: 280,
-      ty: 70,
-      scale: 0.96,
-      opacity: 0.9,
-      z: 2,
-    },
-
-    {
-      tx: 520,
-      ty: 30,
-      scale: 0.88,
-      opacity: 0.68,
-      z: 1,
-    },
-  ];
-};
 
 
 /* =========================================================
@@ -1125,96 +1135,117 @@ function HomePage() {
   const shouldReduceMotion =
     useReducedMotion();
 
-  /* =======================================================
-     VIEWPORT
-  ======================================================== */
+ 
+ /* =========================================================
+   PROFESSIONAL SKILL CAROUSEL STATE
+========================================================= */
 
-  const [
-    viewportWidth,
-    setViewportWidth,
-  ] = useState(1440);
+const [activeSkill, setActiveSkill] =
+  useState(0);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setViewportWidth(
-        window.innerWidth
-      );
-    };
+const [isSkillPaused, setIsSkillPaused] =
+  useState(false);
 
-    handleResize();
 
-    window.addEventListener(
-      "resize",
-      handleResize
-    );
+/* =========================================================
+   VIEWPORT WIDTH
+========================================================= */
 
-    return () => {
-      window.removeEventListener(
-        "resize",
-        handleResize
-      );
-    };
-  }, []);
+const [viewportWidth, setViewportWidth] =
+  useState(1440);
 
-  const slots = useMemo(
-    () =>
-      getSkillSlots(
-        viewportWidth
-      ),
+useEffect(() => {
+  const handleResize = () => {
+    setViewportWidth(window.innerWidth);
+  };
 
-    [viewportWidth]
+  handleResize();
+
+  window.addEventListener(
+    "resize",
+    handleResize,
   );
 
-  /* =======================================================
-     SKILL CAROUSEL
-  ======================================================== */
+  return () => {
+    window.removeEventListener(
+      "resize",
+      handleResize,
+    );
+  };
+}, []);
 
-  const [
-    activeSkill,
-    setActiveSkill,
-  ] = useState(0);
 
-  const [
-    isSkillPaused,
-    setIsSkillPaused,
-  ] = useState(false);
+/* =========================================================
+   RESPONSIVE SLOT POSITIONS
+========================================================= */
 
-  useEffect(() => {
-    if (
-      isSkillPaused ||
-      shouldReduceMotion
-    ) {
-      return;
-    }
+const slots = useMemo(
+  () => getSkillSlots(viewportWidth),
+  [viewportWidth],
+);
 
-    const interval =
-      window.setInterval(() => {
-        setActiveSkill(
-          (previous) =>
-            (previous + 1) %
-            SKILLS.length
-        );
-      }, 2500);
 
-    return () => {
-      window.clearInterval(
-        interval
-      );
-    };
-  }, [
-    isSkillPaused,
-    shouldReduceMotion,
-  ]);
+/* =========================================================
+   AUTO ROTATION
+========================================================= */
 
-  const getSkill = (
-    offset: number
-  ) =>
-    SKILLS[
-      (activeSkill +
-        offset +
-        SKILLS.length) %
-        SKILLS.length
-    ];
+useEffect(() => {
+  if (
+    isSkillPaused ||
+    shouldReduceMotion
+  ) {
+    return;
+  }
+
+  const interval =
+    window.setInterval(() => {
+      setActiveSkill((previous) => {
+        return (
+          previous + 1
+        ) % SKILLS.length;
+      });
+    }, 3000);
+
+  return () => {
+    window.clearInterval(interval);
+  };
+}, [
+  isSkillPaused,
+  shouldReduceMotion,
+]);
+
+
+/* =========================================================
+   GET SKILL INDEX FROM ARC POSITION
+========================================================= */
+
+const getSkillIndex = (
+  offset: number,
+) => {
+  return (
+    activeSkill +
+    offset +
+    SKILLS.length
+  ) % SKILLS.length;
+};
+
+
+/* =========================================================
+   MOVE SELECTED SKILL TO CENTER
+========================================================= */
+
+const handleSkillSelect = (
+  skillIndex: number,
+) => {
+  if (
+    skillIndex === activeSkill
+  ) {
+    return;
+  }
+
+  setActiveSkill(skillIndex);
+};
+
 
   /* =======================================================
      GSAP
@@ -2077,171 +2108,496 @@ function HomePage() {
           </div>
         </section>
 
-        {/* =================================================
-            SKILLS
-        ================================================== */}
+    {/* =========================================================
+    PROFESSIONAL SKILLSET
+========================================================= */}
 
-        <section
-          id="skills"
-          className="Port_SkillSection Port_SectionReveal"
-          onMouseEnter={() =>
-            setIsSkillPaused(
-              true
-            )
-          }
-          onMouseLeave={() =>
-            setIsSkillPaused(
-              false
-            )
-          }
-        >
-          <div className="Port_SkillHeading Port_AnimatedHeading">
-            Professional
-            Skillset
-          </div>
+<section
+  id="skills"
+  className="Port_SkillSection Port_SectionReveal"
+  onMouseEnter={() =>
+    setIsSkillPaused(true)
+  }
+  onMouseLeave={() =>
+    setIsSkillPaused(false)
+  }
+  onFocus={() =>
+    setIsSkillPaused(true)
+  }
+  onBlur={() =>
+    setIsSkillPaused(false)
+  }
+>
+  {/* =====================================================
+      HEADING
+  ====================================================== */}
 
-          <div className="Port_SkillHeadingLine" />
+  <div className="Port_SkillHeading Port_AnimatedHeading">
+    Professional Skillset
+  </div>
 
-          <div className="Port_SkillCarousel">
-            <div className="Port_SkillViewport">
-              {slots.map(
-                (
-                  slot,
-                  index
-                ) => {
-                  const offset =
-                    index - 2;
+  <div className="Port_SkillHeadingLine" />
 
-                  const skill =
-                    getSkill(
-                      offset
-                    );
 
-                  const isCenter =
-                    offset === 0;
+  {/* =====================================================
+      ARC CAROUSEL
+  ====================================================== */}
 
-                  return (
-                    <div
-                      key={`slot-${index}`}
-                      className="Port_SkillPosition"
-                      style={{
-                        transform: `translateX(calc(-50% + ${slot.tx}px)) translateY(${slot.ty}px) scale(${slot.scale})`,
+  <div className="Port_SkillCarousel">
 
-                        opacity:
-                          slot.opacity,
+    <div className="Port_SkillViewport">
 
-                        zIndex:
-                          slot.z,
+      <AnimatePresence
+        initial={false}
+      >
 
-                        cursor:
-                          isCenter
-                            ? "default"
-                            : "pointer",
-                      }}
-                      onClick={() => {
-                        if (
-                          isCenter
-                        ) {
-                          return;
-                        }
+        {[-2, -1, 0, 1, 2].map(
+          (offset) => {
 
-                        setActiveSkill(
-                          (
-                            activeSkill +
-                            offset +
-                            SKILLS.length
-                          ) %
-                            SKILLS.length
-                        );
-                      }}
-                    >
-                      <motion.div
-                        className={`Port_SkillItem${
-                          isCenter
-                            ? " Port_SkillActive"
-                            : ""
-                        }`}
-                        whileHover={
-                          shouldReduceMotion ||
-                          isCenter
-                            ? undefined
-                            : {
-                                scale:
-                                  1.05,
-                              }
-                        }
-                        whileTap={
-                          shouldReduceMotion ||
-                          isCenter
-                            ? undefined
-                            : {
-                                scale:
-                                  0.96,
-                              }
-                        }
-                      >
-                        <Image
-                          src={
-                            skill.image
-                          }
-                          alt={
-                            skill.name
-                          }
-                          width={
-                            isCenter
-                              ? 28
-                              : 20
-                          }
-                          height={
-                            isCenter
-                              ? 28
-                              : 20
-                          }
-                        />
+            /* ===========================================
+               FIND CURRENT SKILL
+            ============================================ */
 
-                        <span>
-                          {
-                            skill.name
-                          }
-                        </span>
-                      </motion.div>
-                    </div>
-                  );
+            const skillIndex =
+              getSkillIndex(offset);
+
+            const skill =
+              SKILLS[skillIndex];
+
+            const slot =
+              slots[offset + 2];
+
+            const isCenter =
+              offset === 0;
+
+
+            return (
+              <motion.button
+                key={skill.id}
+
+                type="button"
+
+                aria-label={
+                  isCenter
+                    ? `${skill.name}, currently selected`
+                    : `Move ${skill.name} to center`
                 }
-              )}
-            </div>
-          </div>
 
-          {/* DOTS */}
+                aria-current={
+                  isCenter
+                    ? "true"
+                    : undefined
+                }
 
-          <div className="Port_SkillDots">
-            {SKILLS.map(
-              (
-                skill,
-                index
-              ) => (
-                <button
-                  key={
-                    skill.id
-                  }
-                  type="button"
-                  className={`Port_SkillDot${
-                    index ===
-                    activeSkill
-                      ? " Port_SkillDotActive"
+                className={`
+                  Port_SkillPosition
+                  ${
+                    isCenter
+                      ? "Port_SkillPosition--active"
                       : ""
-                  }`}
-                  onClick={() =>
-                    setActiveSkill(
-                      index
-                    )
                   }
-                  aria-label={`Go to ${skill.name}`}
-                />
-              )
-            )}
-          </div>
-        </section>
+                `}
+
+                /* =======================================
+                   ENTER
+                ======================================== */
+
+                initial={
+                  shouldReduceMotion
+                    ? false
+                    : {
+                        x:
+                          offset < 0
+                            ? slot.tx - 80
+                            : offset > 0
+                              ? slot.tx + 80
+                              : slot.tx,
+
+                        y:
+                          slot.ty - 16,
+
+                        scale:
+                          slot.scale *
+                          0.82,
+
+                        opacity: 0,
+                      }
+                }
+
+
+                /* =======================================
+                   MOVE ALONG ARC
+                ======================================== */
+
+                animate={{
+                  x: slot.tx,
+
+                  y: slot.ty,
+
+                  scale:
+                    slot.scale,
+
+                  opacity:
+                    slot.opacity,
+                }}
+
+
+                /* =======================================
+                   EXIT
+                ======================================== */
+
+                exit={
+                  shouldReduceMotion
+                    ? {
+                        opacity: 0,
+                      }
+                    : {
+                        x:
+                          offset < 0
+                            ? slot.tx - 100
+                            : offset > 0
+                              ? slot.tx + 100
+                              : slot.tx,
+
+                        y:
+                          slot.ty - 18,
+
+                        scale:
+                          slot.scale *
+                          0.78,
+
+                        opacity: 0,
+                      }
+                }
+
+
+                /* =======================================
+                   SMOOTH SPRING MOVEMENT
+                ======================================== */
+
+                transition={{
+                  x: {
+                    type: "spring",
+
+                    stiffness: 105,
+
+                    damping: 17,
+
+                    mass: 0.9,
+                  },
+
+                  y: {
+                    type: "spring",
+
+                    stiffness: 110,
+
+                    damping: 17,
+
+                    mass: 0.9,
+                  },
+
+                  scale: {
+                    type: "spring",
+
+                    stiffness: 135,
+
+                    damping: 16,
+
+                    mass: 0.8,
+                  },
+
+                  opacity: {
+                    duration: 0.25,
+                  },
+                }}
+
+
+                /* =======================================
+                   LAYER
+                ======================================== */
+
+                style={{
+                  zIndex: slot.z,
+
+                  cursor:
+                    isCenter
+                      ? "default"
+                      : "pointer",
+                }}
+
+
+                /* =======================================
+                   CLICK
+                ======================================== */
+
+                onClick={() =>
+                  handleSkillSelect(
+                    skillIndex,
+                  )
+                }
+              >
+
+                {/* =======================================
+                    SKILL PILL
+                ======================================== */}
+
+                <motion.span
+                  key={`${skill.id}-${isCenter}`}
+
+                  className={`
+                    Port_SkillItem
+                    ${
+                      isCenter
+                        ? "Port_SkillActive"
+                        : ""
+                    }
+                  `}
+
+
+                  /* =====================================
+                     CENTER JUMP
+                  ====================================== */
+
+                  initial={
+                    isCenter &&
+                    !shouldReduceMotion
+                      ? {
+                          y: 5,
+
+                          scale: 0.93,
+                        }
+                      : false
+                  }
+
+
+                  animate={
+                    isCenter &&
+                    !shouldReduceMotion
+                      ? {
+                          /*
+                           * Soft jump when the
+                           * selected skill arrives
+                           * at the center.
+                           */
+                          y: [
+                            5,
+                            -13,
+                            3,
+                            -5,
+                            0,
+                          ],
+
+                          scale: [
+                            0.93,
+                            1.075,
+                            0.985,
+                            1.025,
+                            1,
+                          ],
+                        }
+                      : {
+                          y: 0,
+
+                          scale: 1,
+                        }
+                  }
+
+
+                  /* =====================================
+                     LANDING TIMING
+                  ====================================== */
+
+                  transition={
+                    isCenter
+                      ? {
+                          duration: 0.66,
+
+                          times: [
+                            0,
+                            0.28,
+                            0.53,
+                            0.76,
+                            1,
+                          ],
+
+                          ease:
+                            "easeOut",
+                        }
+                      : {
+                          duration: 0.2,
+                        }
+                  }
+
+
+                  /* =====================================
+                     SIDE ITEM HOVER
+                  ====================================== */
+
+                  whileHover={
+                    shouldReduceMotion ||
+                    isCenter
+                      ? undefined
+                      : {
+                          y: -5,
+
+                          scale: 1.045,
+                        }
+                  }
+
+
+                  /* =====================================
+                     CLICK PRESS
+                  ====================================== */
+
+                  whileTap={
+                    shouldReduceMotion ||
+                    isCenter
+                      ? undefined
+                      : {
+                          scale: 0.94,
+                        }
+                  }
+                >
+
+                  {/* =====================================
+                      ICON
+                  ====================================== */}
+
+                  <span className="Port_SkillIconWrapper">
+
+                    <Image
+                      src={skill.image}
+
+                      alt=""
+
+                      aria-hidden="true"
+
+                      width={
+                        isCenter
+                          ? 28
+                          : 20
+                      }
+
+                      height={
+                        isCenter
+                          ? 28
+                          : 20
+                      }
+
+                      className="Port_SkillIcon"
+                    />
+
+                  </span>
+
+
+                  {/* =====================================
+                      NAME
+                  ====================================== */}
+
+                  <span className="Port_SkillName">
+                    {skill.name}
+                  </span>
+
+                </motion.span>
+
+              </motion.button>
+            );
+          },
+        )}
+
+      </AnimatePresence>
+
+    </div>
+
+  </div>
+
+
+  {/* =====================================================
+      DOT NAVIGATION
+  ====================================================== */}
+
+  <div
+    className="Port_SkillDots"
+    aria-label="Professional skill navigation"
+  >
+
+    {SKILLS.map(
+      (skill, index) => {
+
+        const isActive =
+          index === activeSkill;
+
+        return (
+          <motion.button
+            key={skill.id}
+
+            type="button"
+
+            className={`
+              Port_SkillDot
+              ${
+                isActive
+                  ? "Port_SkillDotActive"
+                  : ""
+              }
+            `}
+
+            onClick={() =>
+              handleSkillSelect(index)
+            }
+
+            aria-label={`Show ${skill.name}`}
+
+            aria-current={
+              isActive
+                ? "true"
+                : undefined
+            }
+
+            animate={{
+              scale:
+                isActive
+                  ? 1
+                  : 0.85,
+
+              opacity:
+                isActive
+                  ? 1
+                  : 0.55,
+            }}
+
+            whileHover={
+              shouldReduceMotion
+                ? undefined
+                : {
+                    scale: 1.3,
+                  }
+            }
+
+            whileTap={
+              shouldReduceMotion
+                ? undefined
+                : {
+                    scale: 0.8,
+                  }
+            }
+
+            transition={{
+              type: "spring",
+
+              stiffness: 260,
+
+              damping: 18,
+            }}
+          />
+        );
+      },
+    )}
+
+  </div>
+
+</section>
+
 
         {/* =================================================
             PROJECTS

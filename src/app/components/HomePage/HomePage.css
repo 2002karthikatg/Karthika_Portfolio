@@ -1247,12 +1247,13 @@ a {
   line-height: 1.45;
 }
 
-
 /* =========================================================
-   SKILLS
+   PROFESSIONAL SKILLSET
 ========================================================= */
 
 .Port_SkillSection {
+  position: relative;
+
   width: 100%;
 
   margin-top:
@@ -1264,26 +1265,25 @@ a {
 
   padding-bottom:
     clamp(
-      45px,
-      4vw,
-      80px
+      55px,
+      5vw,
+      100px
     );
 
   overflow: hidden;
 
-  position: relative;
-
   scroll-margin-top: 90px;
 }
 
+
+/* =========================================================
+   HEADING
+========================================================= */
+
 .Port_SkillHeading {
-  color:
-    rgba(
-      255,
-      255,
-      255,
-      1
-    );
+  position: relative;
+
+  color: #ffffff;
 
   font-family:
     Poppins,
@@ -1295,13 +1295,18 @@ a {
     clamp(
       22px,
       1.55vw,
-      31px
+      32px
     );
 
   line-height: 1.3;
 
   text-align: center;
 }
+
+
+/* =========================================================
+   HEADING LINE
+========================================================= */
 
 .Port_SkillHeadingLine {
   width:
@@ -1319,16 +1324,14 @@ a {
     clamp(
       20px,
       2vw,
-      35px
+      38px
     );
 
   background:
     linear-gradient(
       93.66deg,
-      #194bfd
-        -15.58%,
-      #ad13fb
-        138.95%
+      #194bfd -15.58%,
+      #ad13fb 138.95%
     );
 
   -webkit-mask:
@@ -1352,23 +1355,28 @@ a {
 
 
 /* =========================================================
-   SKILL CAROUSEL
+   CAROUSEL
 ========================================================= */
 
 .Port_SkillCarousel {
+  position: relative;
+
   width: 100%;
 
   height:
     clamp(
-      240px,
-      17vw,
-      340px
+      245px,
+      18vw,
+      355px
     );
-
-  position: relative;
 
   overflow: hidden;
 }
+
+
+/* =========================================================
+   EDGE FADE
+========================================================= */
 
 .Port_SkillCarousel::before,
 .Port_SkillCarousel::after {
@@ -1380,14 +1388,14 @@ a {
 
   bottom: 0;
 
+  z-index: 20;
+
   width:
     clamp(
       50px,
       9vw,
       180px
     );
-
-  z-index: 10;
 
   pointer-events: none;
 }
@@ -1399,6 +1407,13 @@ a {
     linear-gradient(
       to right,
       #0a0a0c 0%,
+      rgba(
+        10,
+        10,
+        12,
+        0.88
+      )
+        28%,
       transparent 100%
     );
 }
@@ -1410,49 +1425,81 @@ a {
     linear-gradient(
       to left,
       #0a0a0c 0%,
+      rgba(
+        10,
+        10,
+        12,
+        0.88
+      )
+        28%,
       transparent 100%
     );
 }
 
+
+/* =========================================================
+   VIEWPORT
+========================================================= */
+
 .Port_SkillViewport {
+  position: relative;
+
   width: 100%;
 
   height: 100%;
 
-  position: relative;
-
   display: flex;
 
-  justify-content: center;
-
   align-items: flex-start;
+
+  justify-content: center;
 }
+
+
+/* =========================================================
+   MOVING POSITION
+
+   IMPORTANT:
+   Framer Motion controls x, y, scale and opacity.
+
+   Do NOT use transform transition here.
+========================================================= */
 
 .Port_SkillPosition {
   position: absolute;
 
-  top: 20px;
+  top: 15px;
 
   left: 50%;
 
-  display: flex;
+  /*
+   * Keeps each pill centred around the
+   * middle point while Framer Motion
+   * independently controls x/y.
+   */
+  translate: -50% 0;
 
-  justify-content: center;
+  margin: 0;
+
+  padding: 0;
+
+  display: flex;
 
   align-items: center;
 
-  transition:
-    transform
-      0.75s
-      cubic-bezier(
-        0.22,
-        1,
-        0.36,
-        1
-      ),
-    opacity
-      0.6s
-      ease;
+  justify-content: center;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  appearance: none;
+
+  -webkit-appearance: none;
+
+  user-select: none;
 
   will-change:
     transform,
@@ -1461,30 +1508,41 @@ a {
 
 
 /* =========================================================
-   SKILL ITEM
+   ACTIVE POSITION
+========================================================= */
+
+.Port_SkillPosition--active {
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   STANDARD SKILL PILL
 ========================================================= */
 
 .Port_SkillItem {
+  position: relative;
+
   min-width:
     clamp(
-      115px,
+      118px,
       9vw,
-      155px
+      160px
     );
 
   height:
     clamp(
       44px,
       3.2vw,
-      57px
+      58px
     );
 
   padding:
     5px
     clamp(
       14px,
-      1.25vw,
-      23px
+      1.2vw,
+      24px
     );
 
   display: flex;
@@ -1493,9 +1551,14 @@ a {
 
   justify-content: center;
 
-  gap: 7px;
+  gap:
+    clamp(
+      6px,
+      0.5vw,
+      9px
+    );
 
-  border-radius: 30px;
+  border-radius: 999px;
 
   white-space: nowrap;
 
@@ -1507,6 +1570,15 @@ a {
       35,
       38,
       1
+    );
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.025
     );
 
   font-family:
@@ -1522,53 +1594,98 @@ a {
 
   font-weight: 500;
 
+  line-height: 1;
+
   box-shadow:
-    0 7px 24px
+    0 6px 22px
     rgba(
       0,
       0,
       0,
+      0.15
+    );
+
+  transform-origin:
+    center center;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+
+  will-change:
+    transform;
+}
+
+
+/* =========================================================
+   SIDE PILL HOVER
+========================================================= */
+
+.Port_SkillPosition:not(
+    .Port_SkillPosition--active
+  ):hover
+  .Port_SkillItem {
+  background:
+    rgba(
+      42,
+      42,
+      46,
+      1
+    );
+
+  border-color:
+    rgba(
+      173,
+      19,
+      251,
+      0.18
+    );
+
+  box-shadow:
+    0 10px 30px
+    rgba(
+      173,
+      19,
+      251,
       0.1
     );
 }
 
 
 /* =========================================================
-   ACTIVE SKILL
+   ACTIVE CENTER PILL
 ========================================================= */
 
 .Port_SkillActive {
   min-width:
     clamp(
-      150px,
+      155px,
       12vw,
-      210px
+      220px
     );
 
   height:
     clamp(
-      52px,
-      3.7vw,
-      66px
+      54px,
+      3.8vw,
+      70px
     );
 
   padding:
     0
     clamp(
       20px,
-      1.5vw,
-      30px
+      1.55vw,
+      32px
     );
 
-  border-radius: 36px;
-
-  gap: 9px;
-
-  position: relative;
-
-  overflow: visible;
-
-  cursor: default;
+  gap:
+    clamp(
+      8px,
+      0.6vw,
+      11px
+    );
 
   color: #ffffff;
 
@@ -1576,10 +1693,14 @@ a {
     clamp(
       17px,
       1.3vw,
-      24px
+      25px
     );
 
   font-weight: 500;
+
+  border:
+    1.5px solid
+    transparent;
 
   background:
     linear-gradient(
@@ -1597,6 +1718,7 @@ a {
         )
       )
       padding-box,
+
     linear-gradient(
         90deg,
         #194bfd 0%,
@@ -1604,37 +1726,45 @@ a {
       )
       border-box;
 
-  border:
-    1.5px solid
-    transparent;
-
   box-shadow:
-    0 0 25px
+    0 0 28px
       rgba(
         173,
         19,
         251,
         0.18
       ),
-    0 0 9px
+    0 0 12px
       rgba(
         25,
         75,
         253,
-        0.12
+        0.13
+      ),
+    0 12px 35px
+      rgba(
+        0,
+        0,
+        0,
+        0.22
       );
 }
+
+
+/* =========================================================
+   ACTIVE BACK GLOW
+========================================================= */
 
 .Port_SkillActive::after {
   content: "";
 
   position: absolute;
 
-  inset: -4px;
+  inset: -6px;
 
   z-index: -1;
 
-  border-radius: 38px;
+  border-radius: inherit;
 
   background:
     linear-gradient(
@@ -1643,93 +1773,180 @@ a {
       #ad13fb
     );
 
-  opacity: 0.14;
+  opacity: 0.13;
 
-  filter: blur(10px);
+  filter: blur(13px);
+
+  pointer-events: none;
 
   animation:
     Port_SkillGlowPulse
-    2.4s
+    2.6s
     ease-in-out
     infinite;
-}
-
-.Port_SkillActive img {
-  width:
-    clamp(
-      23px,
-      1.5vw,
-      30px
-    );
-
-  height:
-    clamp(
-      23px,
-      1.5vw,
-      30px
-    );
-
-  animation:
-    Port_SkillIconFloat
-    2s
-    ease-in-out
-    infinite;
-}
-
-@keyframes
-  Port_SkillGlowPulse {
-
-  0%,
-  100% {
-    opacity: 0.1;
-
-    filter:
-      blur(10px);
-  }
-
-  50% {
-    opacity: 0.22;
-
-    filter:
-      blur(14px);
-  }
-}
-
-@keyframes
-  Port_SkillIconFloat {
-
-  0%,
-  100% {
-    transform:
-      translateY(0);
-  }
-
-  50% {
-    transform:
-      translateY(-2px);
-  }
 }
 
 
 /* =========================================================
-   SKILL DOTS
+   LANDING SHADOW
+
+   Creates small impact below active pill
 ========================================================= */
 
-.Port_SkillDots {
-  display: flex;
+.Port_SkillActive::before {
+  content: "";
 
-  justify-content: center;
+  position: absolute;
+
+  left: 50%;
+
+  bottom: -26px;
+
+  width: 72%;
+
+  height: 14px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(
+        103,
+        55,
+        255,
+        0.28
+      )
+        0%,
+      rgba(
+        173,
+        19,
+        251,
+        0.08
+      )
+        46%,
+      transparent 76%
+    );
+
+  filter: blur(6px);
+
+  pointer-events: none;
+
+  animation:
+    Port_SkillLandingShadow
+    0.7s
+    ease-out both;
+}
+
+
+/* =========================================================
+   ICON WRAPPER
+========================================================= */
+
+.Port_SkillIconWrapper {
+  display: flex;
 
   align-items: center;
 
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.Port_SkillIcon {
+  display: block;
+
+  object-fit: contain;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   ACTIVE ICON FLOAT
+========================================================= */
+
+.Port_SkillActive
+  .Port_SkillIcon {
+  width:
+    clamp(
+      24px,
+      1.55vw,
+      31px
+    );
+
+  height:
+    clamp(
+      24px,
+      1.55vw,
+      31px
+    );
+
+  animation:
+    Port_SkillIconFloat
+    2.3s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   SKILL NAME
+========================================================= */
+
+.Port_SkillName {
+  line-height: 1;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   DOTS
+========================================================= */
+
+.Port_SkillDots {
+  width: 100%;
+
+  max-width: 450px;
+
+  margin:
+    clamp(
+      8px,
+      1vw,
+      16px
+    )
+    auto
+    0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
   flex-wrap: wrap;
 
-  gap: 8px;
-
-  max-width: 420px;
-
-  margin: 12px auto 0;
+  gap:
+    clamp(
+      6px,
+      0.55vw,
+      9px
+    );
 }
+
+
+/* =========================================================
+   DOT
+========================================================= */
 
 .Port_SkillDot {
   width: 6px;
@@ -1738,37 +1955,45 @@ a {
 
   min-width: 6px;
 
-  border: none;
-
-  border-radius: 50%;
+  margin: 0;
 
   padding: 0;
+
+  border: none;
+
+  outline: none;
+
+  border-radius: 50%;
 
   background:
     rgba(
       255,
       255,
       255,
-      0.2
+      0.22
     );
 
   cursor: pointer;
 
+  appearance: none;
+
+  -webkit-appearance: none;
+
   transition:
-    width 0.4s ease,
-    background 0.4s ease,
-    transform 0.2s ease;
+    width 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
-.Port_SkillDot:hover {
-  transform:
-    scale(1.3);
-}
+
+/* =========================================================
+   ACTIVE DOT
+========================================================= */
 
 .Port_SkillDotActive {
-  width: 20px;
+  width: 22px;
 
-  border-radius: 4px;
+  border-radius: 10px;
 
   background:
     linear-gradient(
@@ -1776,8 +2001,248 @@ a {
       #194bfd,
       #ad13fb
     );
+
+  box-shadow:
+    0 0 10px
+    rgba(
+      112,
+      47,
+      255,
+      0.28
+    );
 }
 
+
+/* =========================================================
+   GLOW
+========================================================= */
+
+@keyframes Port_SkillGlowPulse {
+  0%,
+  100% {
+    opacity: 0.1;
+
+    filter: blur(11px);
+  }
+
+  50% {
+    opacity: 0.22;
+
+    filter: blur(16px);
+  }
+}
+
+
+/* =========================================================
+   ACTIVE ICON FLOAT
+========================================================= */
+
+@keyframes Port_SkillIconFloat {
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translateY(-3px)
+      rotate(2deg);
+  }
+}
+
+
+/* =========================================================
+   LANDING SHADOW
+========================================================= */
+
+@keyframes Port_SkillLandingShadow {
+  0% {
+    opacity: 0;
+
+    transform:
+      translateX(-50%)
+      scaleX(0.45);
+  }
+
+  35% {
+    opacity: 1;
+
+    transform:
+      translateX(-50%)
+      scaleX(1.2);
+  }
+
+  100% {
+    opacity: 0.55;
+
+    transform:
+      translateX(-50%)
+      scaleX(1);
+  }
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1921px) {
+  .Port_SkillCarousel {
+    height: 370px;
+  }
+
+  .Port_SkillDots {
+    max-width: 520px;
+  }
+}
+
+
+/* =========================================================
+   SMALL DESKTOP
+========================================================= */
+
+@media (max-width: 1280px) {
+  .Port_SkillCarousel {
+    height: 290px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+  .Port_SkillSection {
+    margin-top: 65px;
+
+    padding-bottom: 60px;
+  }
+
+  .Port_SkillCarousel {
+    height: 245px;
+  }
+
+  .Port_SkillCarousel::before,
+  .Port_SkillCarousel::after {
+    width: 55px;
+  }
+
+  .Port_SkillDots {
+    max-width: 360px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .Port_SkillHeading {
+    font-size: 21px;
+  }
+
+  .Port_SkillHeadingLine {
+    width: 190px;
+
+    margin-bottom: 18px;
+  }
+
+  .Port_SkillCarousel {
+    height: 215px;
+  }
+
+  .Port_SkillCarousel::before,
+  .Port_SkillCarousel::after {
+    width: 35px;
+  }
+
+  .Port_SkillItem {
+    min-width: 105px;
+
+    height: 40px;
+
+    padding:
+      4px
+      11px;
+
+    gap: 5px;
+
+    font-size: 12px;
+  }
+
+  .Port_SkillItem
+    .Port_SkillIcon {
+    width: 17px;
+
+    height: 17px;
+  }
+
+  .Port_SkillActive {
+    min-width: 145px;
+
+    height: 50px;
+
+    padding:
+      0
+      17px;
+
+    font-size: 15px;
+  }
+
+  .Port_SkillActive
+    .Port_SkillIcon {
+    width: 22px;
+
+    height: 22px;
+  }
+
+  .Port_SkillActive::before {
+    bottom: -20px;
+
+    height: 10px;
+  }
+
+  .Port_SkillDots {
+    max-width: 300px;
+
+    gap: 6px;
+
+    margin-top: 4px;
+  }
+
+  .Port_SkillDot {
+    width: 5px;
+
+    height: 5px;
+
+    min-width: 5px;
+  }
+
+  .Port_SkillDotActive {
+    width: 17px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (
+  prefers-reduced-motion:
+    reduce
+) {
+  .Port_SkillActive::after,
+  .Port_SkillActive::before,
+  .Port_SkillActive
+    .Port_SkillIcon {
+    animation: none !important;
+  }
+}
 
 /* =========================================================
    PROJECT SECTION
