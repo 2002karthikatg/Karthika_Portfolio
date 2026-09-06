@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import PortfolioCursor from "./components/PortfolioCursor/PortfolioCursor";
+import PreloaderManager from "./components/Preloader/PreloaderManager";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -76,6 +77,7 @@ export default function RootLayout({
       </head>
 
       <body className="min-h-full">
+        <PreloaderManager />
         <PortfolioCursor />
         {children}
       </body>
