@@ -17,7 +17,7 @@ import PreloaderDownloaded from "./PreloaderDownloaded";
  * You can switch to decide which you like best.
  */
 const USE_DOWNLOADED_PRELOADER =
-  true;
+  false;
 
 function PreloaderManager() {
   const [loading, setLoading] =
